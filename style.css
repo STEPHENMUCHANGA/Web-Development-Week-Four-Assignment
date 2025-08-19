@@ -1,0 +1,155 @@
+/* Universal Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Logo */
+.logo {
+    max-width: 120px;  
+    height: auto;      
+    display: block;
+    margin: 0 auto 10px; 
+}
+
+/* Header */
+header {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* === MAIN LAYOUT USING CSS GRID === */
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* content + sidebar style */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Sections inside grid */
+main section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+}
+
+/* === TABLE STYLING === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #0073e6;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* === FORM STYLING === */
+form {
+    display: flex;
+    flex-direction: column;  /* Flexbox used for stacking */
+    background-color: white;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #0073e6;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    background-color: #004080;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Box Model Demonstration */
+table, th, td, form, input, select, button {
+    box-sizing: border-box;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile First (default is single column) */
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr; /* single column */
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    table, form {
+        font-size: 14px;
+    }
+}
+
+/* Tablet View */
+@media (min-width: 601px) and (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr; /* still single column for better spacing */
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    table, form {
+        font-size: 15px;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 901px) {
+    main {
+        grid-template-columns: 2fr 1fr; /* content + sidebar */
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
